@@ -1,1 +1,1 @@
-# NCU-Lab-Manual-And-End-Semester-Projects
+# NCU Lab Manual And End-Semester Projects
