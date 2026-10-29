@@ -63,7 +63,7 @@ Double: This can be thought of as a bet that is offered instead of taking an ord
 
 # Function to clear the terimanl
 def clear_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')  # noqa: S605 - Fixed platform command; no user input reaches the shell.
 
 # Card class to create card objects
 
@@ -261,7 +261,7 @@ def play_game(deck):
     while len(player_cards) < 2:
 
         # Randomly dealing a card to player
-        player_card = random.choice(deck)
+        player_card = random.choice(deck)  # noqa: S311 - Simulation or game randomness, not a security token.
         player_cards.append(player_card)
         deck.remove(player_card)
 
@@ -275,7 +275,7 @@ def play_game(deck):
                 player_score -= 10
 
         # Randomly dealing a card to dealer
-        dealer_card = random.choice(deck)
+        dealer_card = random.choice(deck)  # noqa: S311 - Simulation or game randomness, not a security token.
         dealer_cards.append(dealer_card)
         deck.remove(dealer_card)
 
@@ -312,7 +312,7 @@ def play_game(deck):
         if choice.upper() == 'H':
 
             # Dealing a new card
-            player_card = random.choice(deck)
+            player_card = random.choice(deck)  # noqa: S311 - Simulation or game randomness, not a security token.
             player_cards.append(player_card)
             deck.remove(player_card)
 
@@ -344,7 +344,7 @@ def play_game(deck):
 
         print("DEALER DECIDES TO HIT")
         # Dealing card for dealer
-        dealer_card = random.choice(deck)
+        dealer_card = random.choice(deck)  # noqa: S311 - Simulation or game randomness, not a security token.
         dealer_cards.append(dealer_card)
         deck.remove(dealer_card)
 
