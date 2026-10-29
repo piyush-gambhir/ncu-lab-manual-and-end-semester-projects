@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]
+  - package-ecosystem: pip
+    directories:
+      - "/NCU-CSL227 - ACS - Lab Manual/Experiment 1"
+      - "/NCU-CSL227 - ACS - Lab Manual/Experiment 2"
+      - "/NCU-CSL227 - ACS - Lab Manual/Experiment 3"
+      - "/NCU-CSL227 - ACS - Lab Manual/Experiment 4/Qualitative"
+      - "/NCU-CSL227 - ACS - Lab Manual/Experiment 4/Quantitative"
+      - "/NCU-CSL227 - ACS - Lab Manual/Experiment 7"
+      - "/NCU-CSL227 - ACS - Lab Manual/Experiment 8"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    groups:
+      dependencies:
+        patterns: ["*"]
+        update-types: [minor, patch]
