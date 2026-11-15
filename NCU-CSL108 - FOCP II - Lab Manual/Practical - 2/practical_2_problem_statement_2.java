@@ -13,9 +13,9 @@ DoD 3: The program should print “Vowel” if the entered character is a vowel 
 
 import java.util.Scanner;
 
-/**
- * practical_2_problem_statement_2
- */
+
+
+
 public class practical_2_problem_statement_2 {
 
     public static void main(String[] args) {

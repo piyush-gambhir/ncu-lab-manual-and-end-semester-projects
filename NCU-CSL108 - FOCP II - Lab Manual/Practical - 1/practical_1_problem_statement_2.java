@@ -1,15 +1,15 @@
-/*
-Write a Java program to convert minutes into the number of years, months and days.
-Definition Of Done : 
-DoD 1: Ask the user to input the minutes
-DoD 2: Display years and months and days in the sequence yy-mm-dd.
-*/
+
+
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * practical_1_problem_statement_2
- */
+
+
+
 public class practical_1_problem_statement_2 {
 
     public static void main(String[] args) {

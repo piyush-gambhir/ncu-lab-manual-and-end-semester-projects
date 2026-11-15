@@ -1,26 +1,26 @@
--- Problem Statement
--- Consider the COMPANY database in Experiment 1 and execute the following queries:
--- 1)	Find the sum of the salaries of all employees, the maximum salary, the minimum salary, and the average salary.
--- 2)	Find the sum of the salaries of all employees of the ‘Research’ department, as well as the maximum salary, the minimum salary, and the average salary in this department.
--- 3)	Retrieve the total number of employees in the company.
--- 4)	Retrieve the number of employees in the ‘Research’ department.
--- 5)	Count the number of distinct salary values in the database
--- 6)	For each department, retrieve the department number, the number of employees in the department, and their average salary.
--- 7)	For each project, retrieve the project number, the project name, and the number of employees who work on that project.
--- 8)	For each project on which more than two employees work, retrieve the project number, the project name, and the number of employees who work on the project
--- 9)	For each project, retrieve the project number, the project name, and the number of employees from department 5 who work on the project.
--- 10)	For each department that has more than five employees, retrieve the department number and the number of its employees who are making more than $40,000. 
 
--- DROP DATABASE IF EXISTS EXPERIMENT_6;
+
+
+
+
+
+
+
+
+
+
+
+
+
 DROP DATABASE IF EXISTS EXPERIMENT_6;
 
--- CREATING DATABASE
+
 CREATE DATABASE EXPERIMENT_6;
 
--- USING DATABASE
+
 USE EXPERIMENT_6;
 
--- CREATING TABLES
+
 CREATE TABLE DEPARTMENT(
     Dname VARCHAR(30) NOT NULL,
     Dnumber INT NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE DEPENDENT(
     FOREIGN KEY(Essn) REFERENCES EMPLOYEE(Ssn)
 );
 
--- INSERTING DATA
+
 
 INSERT INTO DEPARTMENT(Dname, Dnumber, Mgr_start_date, Mgr_ssn) VALUES('Research', 5, '1988-05-22', NULL);
 INSERT INTO DEPARTMENT(Dname, Dnumber, Mgr_start_date, Mgr_ssn) VALUES('Administration', 4, '1995-01-01', NULL);
@@ -152,44 +152,44 @@ INSERT INTO DEPENDENT(Essn,Dependent_name, Sex, Bdate, Relationship) VALUES('666
 INSERT INTO DEPENDENT(Essn, Dependent_name, Sex, Bdate, Relationship) VALUES('453453453', 'Joyce English', 'F', '1972-07-31', '5631 Rice, Houston, TX');
 
 
--- Problem Statement Answers
 
--- 1)	Find the sum of the salaries of all employees, the maximum salary, the minimum salary, and the average salary.
+
+
 SELECT SUM(Salary) AS "Sum of Salaries", MAX(Salary) AS "Max Salary", MIN(Salary) AS "Min Salary", AVG(Salary) AS "Average Salary" FROM EMPLOYEE;
 
--- 2)	Find the sum of the salaries of all employees of the ‘Research’ department, as well as the maximum salary, the minimum salary, and the average salary in this department.
+
 SELECT SUM(Salary) AS "Sum of Salaries", MAX(Salary) AS "Max Salary", MIN(Salary) AS "Min Salary", AVG(Salary) AS "Average Salary" FROM EMPLOYEE WHERE Dno = 5;
 
--- 3)	Retrieve the total number of employees in the company.
+
 SELECT COUNT(*) AS "Total Number of Employees" FROM EMPLOYEE;
 
--- 4)	Retrieve the number of employees in the ‘Research’ department.
+
 SELECT COUNT(*) AS "Number of Employees in Research" FROM EMPLOYEE 
 WHERE Dno = 5;
 
--- 5)	Count the number of distinct salary values in the database
+
 SELECT COUNT(DISTINCT Salary) AS "Number of Distinct Salaries" FROM EMPLOYEE;
 
--- 6)	For each department, retrieve the department number, the number of employees in the department, and their average salary.
+
 SELECT Dno, COUNT(*) AS "Number of Employees", AVG(Salary) AS "Average Salary" FROM EMPLOYEE 
 GROUP BY Dno;
 
--- 7)	For each project, retrieve the project number, the project name, and the number of employees who work on that project.
+
 SELECT Pnumber, Pname, COUNT(*) AS "Number of Employees" FROM PROJECT, WORKS_ON 
 WHERE Pnumber = Pno GROUP BY Pnumber, Pname;
 
--- 8)	For each project on which more than two employees work, retrieve the project number, the project name, and the number of employees who work on the project
+
 SELECT Pnumber, Pname, COUNT(*) AS "Number of Employees" FROM PROJECT, WORKS_ON 
 WHERE Pnumber = Pno 
 GROUP BY Pnumber, Pname 
 HAVING COUNT(*) > 2;
 
--- 9)	For each project, retrieve the project number, the project name, and the number of employees from department 5 who work on the project.
+
 SELECT Pnumber, Pname, COUNT(*) AS "Number of Employees" FROM PROJECT, WORKS_ON, EMPLOYEE 
 WHERE Pnumber = Pno AND Essn = Ssn AND Dno = 5 
 GROUP BY Pnumber, Pname;
 
--- 10)	For each department that has more than five employees, retrieve the department number and the number of its employees who are making more than $40,000. 
+
 SELECT Dno, COUNT(*) AS "Number of Employees" FROM EMPLOYEE 
 WHERE Salary > 40000 
 GROUP BY Dno 

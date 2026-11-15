@@ -1,25 +1,25 @@
-/*
-Create three classes:
-Class Vehicle: Vehicle Class will contain a display() function, which will say "This is a Vehicle".
-Class Car: Car Class will derive the Vehicle Class and overwrite its display() function. it will say "This is a Car".
-Class Bike:Bike Class will derive the Vehicle Class and overwrite its display() function. it will say "This is a Bike".
 
-Write an application that reads an Integer N, which will denote the number of tyres in the vehicle. You have to create an object of the appropriate class according to the value of N and use it display( function.
 
-If N = 2, Create a Bike Object.
-If N = 4, Create a Car Object.
 
-Create a Vehicle Object, otherwise.
 
-Definition of Done:
-DoD 1: Each class definition is stored in its own .java file.
-DoD 2: Switch statement is used for identifying the appropriate class for which the object is 
-to be invoked.
-*/
 
-/**
- * practical_5_problem_statement_2
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 import java.util.Scanner;
 

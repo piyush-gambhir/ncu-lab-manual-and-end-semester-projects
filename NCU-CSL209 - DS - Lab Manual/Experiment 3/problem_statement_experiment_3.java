@@ -1,22 +1,22 @@
-/*
 
-Problem Statement:
-Write a program to read numbers in an integer array of size 5 and display the following:
-• Sum of all the elements
-• Sum of alternate elements in the array
-• Second highest element in the array
 
-*/
+
+
+
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * problem_statement
- */
+
+
+
 public class problem_statement_experiment_3 {
 
-    // Method enterArrayElements(int[] arr)
-    // Method for taking input for array elements
+
+
     public static void enterArrayElements(int[] arr) {
         Scanner sc = new Scanner(System.in);
 
@@ -33,8 +33,8 @@ public class problem_statement_experiment_3 {
         sc.close();
     }
 
-    // Method printArrayElements(int[] arr)
-    // Method for printing array elements
+
+
     public static void printArrayElements(int[] arr) {
         System.out.print("""
                 ====================================
@@ -46,8 +46,8 @@ public class problem_statement_experiment_3 {
         }
     }
 
-    // Method printAlternateArrayElements(int[] arr)
-    // Method for printing alternate array elements
+
+
     public static void printAlternateArrayElements(int[] arr) {
         System.out.println("""
                 ====================================
@@ -59,8 +59,8 @@ public class problem_statement_experiment_3 {
         }
     }
 
-    // Method getLargestElement(int[] arr)
-    // Method to get largest value in the array
+
+
     public static int getLargestElement(int[] arr) {
         int largestElement = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -71,8 +71,8 @@ public class problem_statement_experiment_3 {
         return largestElement;
     }
 
-    // methodgetSecondLargestElement(int[] arr)
-    // Method to get second largest value i the array
+
+
     public static int getSecondLargestElemnt(int[] arr) {
         int secondLargestElement = -1;
         for (int i = 0; i < arr.length; i++) {

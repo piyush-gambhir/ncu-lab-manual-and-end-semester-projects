@@ -1,13 +1,13 @@
-/*
 
-Problem Statement:
-Write a method called median() that accepts an array of integers as its argument and returns the median of the numbers in the array. The median is the number that will appear in the middle if you arrange the elements in order.
 
-*/
 
-/**
- * question_bank_6_experiment_4
- */
+
+
+
+
+
+
+
 public class question_bank_6_experiment_4 {
     public static int median(int[] arr) {
         int median = 0;

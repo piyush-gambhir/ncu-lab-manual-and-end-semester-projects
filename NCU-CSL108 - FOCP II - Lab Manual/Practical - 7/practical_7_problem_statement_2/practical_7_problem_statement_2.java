@@ -1,10 +1,10 @@
-/*
-Write a java program outside the above defined package that imports the package PackageDemo and calls its display() function.
-*/
 
-/**
- * practical_7_problem_statement_2
- */
+
+
+
+
+
+
 
 import exercise.java.PackageDemo;
 

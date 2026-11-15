@@ -1,21 +1,21 @@
-/*
- * Problem Statement:
- * Write a program that initializes an array with ten random integers and then prints four lines of output, containing: 
- * • Every element at an even index
- * • Every odd element
- * • All elements in reverse order
- * • Only the first and last elemenarray.
- */
+
+
+
+
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * problem_statement_experiment_2
- */
+
+
+
 public class problem_statement_experiment_2 {
 
-    // Method enterArrayElements(int[] arr)
-    // Method for taking input for array elements
+
+
     public static void enterArrayElements(int[] arr) {
         Scanner sc = new Scanner(System.in);
 
@@ -32,8 +32,8 @@ public class problem_statement_experiment_2 {
         sc.close();
     }
 
-    // Method printArrayElements(int[] arr)
-    // Method for printing array elements
+
+
     public static void printArrayElements(int[] arr) {
         System.out.print("""
                 ====================================
@@ -45,8 +45,8 @@ public class problem_statement_experiment_2 {
         }
     }
 
-    // Method printArrayElements(int[] arr)
-    // Method for printing array elements
+
+
     public static void printReversedArrayElements(int[] arr) {
         System.out.print("""
                 ====================================
@@ -58,8 +58,8 @@ public class problem_statement_experiment_2 {
         }
     }
 
-    // Method printOddIndexArrayElements(int[] arr)
-    // Method for printing array elements at odd index
+
+
     public static void printOddIndexArrayElements(int[] arr) {
         System.out.print("""
                 =======================================
@@ -73,8 +73,8 @@ public class problem_statement_experiment_2 {
         }
     }
 
-    // Method printEvenIndexArrayElements(int[] arr)
-    // Method for printing array elements at even index
+
+
     public static void printEvenIndexArrayElements(int[] arr) {
         System.out.print("""
                 ========================================

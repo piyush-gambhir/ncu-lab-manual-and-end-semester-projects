@@ -6,7 +6,7 @@ The choice of deck could be one, two or maximum three. If you are good at probab
 """
 
 
-# Importing Required Modules
+
 import os
 import time
 import random
@@ -61,23 +61,23 @@ Double: This can be thought of as a bet that is offered instead of taking an ord
 """
 
 
-# Function to clear the terimanl
+
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')  # noqa: S605 - Fixed platform command; no user input reaches the shell.
 
-# Card class to create card objects
+
 
 
 class Card():
     def __init__(self, suit, card, card_score_value):
 
-        # Suit of the Card like Spades, Clubs, Diamonds, Hearts
+
         self.__suit = suit
 
-        # Representing the card like 2,3,4,5,6,7,8,9,10,Jack,Queen,King,Ace
+
         self.__card = card
 
-        # Score value of the card
+
         self.__card_score_value = card_score_value
 
     def get_suit(self):
@@ -92,7 +92,7 @@ class Card():
     def set_card_score_value(self, card_score_value):
         self.__card_score_value = card_score_value
 
-# Function to create deck of cards
+
 
 
 def deck():
@@ -109,7 +109,7 @@ def deck():
             deck.append(Card(suit, card, card_values[card]))
     return deck
 
-# Function to print the cards
+
 
 
 def print_cards(cards, hidden):
@@ -247,42 +247,42 @@ def print_cards(cards, hidden):
 
 
 def play_game(deck):
- # Cards for both dealer and player
+
     player_cards = []
     dealer_cards = []
 
-    # Scores for both dealer and player
+
     player_score = 0
     dealer_score = 0
 
     clear_terminal()
 
-    # Initial dealing for player and dealer
+
     while len(player_cards) < 2:
 
-        # Randomly dealing a card to player
+
         player_card = random.choice(deck)  # noqa: S311 - Simulation or game randomness, not a security token.
         player_cards.append(player_card)
         deck.remove(player_card)
 
-        # Updating the player score
+
         player_score += player_card.get_card_score_value()
 
-        # In case both the cards are Ace, make the first ace value as 1
+
         if len(player_cards) == 2:
             if player_cards[0].get_card_score_value() == 11 and player_cards[1].get_card_score_value() == 11:
                 player_cards[0].set_card_score_value(1)
                 player_score -= 10
 
-        # Randomly dealing a card to dealer
+
         dealer_card = random.choice(deck)  # noqa: S311 - Simulation or game randomness, not a security token.
         dealer_cards.append(dealer_card)
         deck.remove(dealer_card)
 
-        # Updating the dealer score
+
         dealer_score += dealer_card.get_card_score_value()
 
-        # In case both the cards are Ace, make the second ace value as 1
+
         if len(dealer_cards) == 2:
             if dealer_cards[0].get_card_score_value() == 11 and dealer_cards[1].get_card_score_value() == 11:
                 dealer_cards[1].set_card_score_value(1)
@@ -290,7 +290,7 @@ def play_game(deck):
 
     check_blackjack(player_cards, player_score, dealer_cards, dealer_score)
 
-    # Managing the player moves
+
     if (player_score < 21):
         clear_terminal()
 
@@ -303,23 +303,23 @@ def play_game(deck):
 
         choice = input("Enter H to Hit or S to Stand : ")
 
-        # Checking for invalid input
+
         if len(choice) != 1 or (choice.upper() != 'H' and choice.upper() != 'S'):
             clear_terminal()
             print("Invalid Choice! Try Again")
 
-        # If player decides to HIT
+
         if choice.upper() == 'H':
 
-            # Dealing a new card
+
             player_card = random.choice(deck)  # noqa: S311 - Simulation or game randomness, not a security token.
             player_cards.append(player_card)
             deck.remove(player_card)
 
-            # Updating player score
+
             player_score += player_card.get_card_score_value()
 
-            # Updating player score in case player's card have ace in them
+
             c = 0
             while player_score > 21 and c < len(player_cards):
                 if player_cards[c].get_card_score_value() == 11:
@@ -329,29 +329,29 @@ def play_game(deck):
                 else:
                     c += 1
 
-            # Checking for blackjack
+
             check_blackjack(player_cards, player_score,
                             dealer_cards, dealer_score)
 
-        # If player decides to Stand
+
         if choice.upper() == 'S':
             print("Player Stands")
             print("Dealer's Turn")
 
-    # Managing the dealer moves
+
     while dealer_score < 17:
         clear_terminal()
 
         print("DEALER DECIDES TO HIT")
-        # Dealing card for dealer
+
         dealer_card = random.choice(deck)  # noqa: S311 - Simulation or game randomness, not a security token.
         dealer_cards.append(dealer_card)
         deck.remove(dealer_card)
 
-        # Updating the dealer's score
+
         dealer_score += dealer_card.get_card_score_value()
 
-        # Updating player score in case player's card have ace in them
+
         c = 0
         while dealer_score > 21 and c < len(dealer_cards):
             if dealer_cards[c].get_card_score_value() == 11:
@@ -361,20 +361,20 @@ def play_game(deck):
             else:
                 c += 1
 
-    # Checking for blackjack
+
     check_blackjack(player_cards, player_score, dealer_cards, dealer_score)
 
-    # print player and dealer cards
+
     print_player_cards_and_score(player_cards, player_score, False)
     print()
     print("DEALER CARDS: ")
     print_cards(dealer_cards, False)
 
-    # Checking for the winner
+
     check_winner(player_score, dealer_score)
 
 
-# Print dealer cards and score
+
 def print_dealer_cards_and_score(dealer_cards, dealer_score, hidden):
     print("DEALER CARDS: ")
     print_cards(dealer_cards[:-1], hidden)
@@ -382,13 +382,13 @@ def print_dealer_cards_and_score(dealer_cards, dealer_score, hidden):
           dealer_cards[-1].get_card_score_value())
 
 
-# Print player cards and score
+
 def print_player_cards_and_score(player_cards, player_score, hidden):
     print("PLAYER CARDS: ")
     print_cards(player_cards, hidden)
     print("PLAYER SCORE = ", player_score)
 
-# Check if player or dealer has blackjack
+
 
 
 def check_blackjack(player_cards, player_score, dealer_cards, dealer_score):
@@ -398,7 +398,7 @@ def check_blackjack(player_cards, player_score, dealer_cards, dealer_score):
         print_dealer_cards_and_score(dealer_cards, dealer_score, False)
         print("BLACKJACK! YOU WIN!")
         play_again()
-    # Dealer gets a blackjack
+
     if dealer_score == 21:
         clear_terminal()
         print_player_cards_and_score(player_cards, player_score, False)
@@ -409,29 +409,29 @@ def check_blackjack(player_cards, player_score, dealer_cards, dealer_score):
 
 def check_winner(player_score, dealer_score):
 
-    # Checking for dealer's win
+
     if player_score > 21:
         print("PLAYER BUSTED! GAME OVER!")
         play_again()
 
-    # Checking for player's win
+
     if dealer_score > 21:
         print("DEALER BUSTED! YOU WIN!")
         play_again()
 
-    # Checking for tie
+
     if dealer_score == player_score:
         print("\n")
         print("TIE GAME!")
         play_again()
 
-    # Player Wins
+
     elif player_score > dealer_score:
         print("\n")
         print("PLAYER WINS!")
         play_again()
 
-    # Dealer Wins
+
     else:
         print("\n")
         print("DEALER WINS!")
@@ -455,10 +455,10 @@ Welcome to the game of Blackjack
     """)
     if (input("Do you want to play a game of Blackjack? (Y/N) ").upper() == 'Y'):
         clear_terminal()
-        # Creating a deck of cards
+
         card_deck = deck()
 
-        # Starting the game
+
         play_game(card_deck)
     else:
         print("Thanks for playing")

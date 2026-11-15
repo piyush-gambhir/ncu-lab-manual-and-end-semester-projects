@@ -1,27 +1,27 @@
--- Problem Statement
--- From the COMPANY database as mentioned and described in the previous database :
--- 1)   Retrieve the birth date and address of the employee(s) whose name is ‘John B. Smith’.
--- 2)	Retrieve the name and address of all employees who work for the ‘Research’ department.
--- 3)	For every project located in ‘Stafford’, list the project number, the controlling department number, and the department manager’s last name, address, and birth date.
--- 4)	Select all combinations of EMPLOYEE Ssn and DEPARTMENT Dname in the database.
--- 5)	Retrieve all the attribute values of any EMPLOYEE who works in DEPARTMENT number 5.
--- 6)	Retrieve all distinct salary values.
--- 7)	Make a list of all project numbers for projects that involve an employee whose last name is ‘Smith’, either as a worker or as a manager of the department that controls the project.
--- 8)	Retrieve all employees whose address is in Houston, Texas.
--- 9)	Find all employees who were born during the 1950s
--- 10)	Show the resulting salaries if every employee working on the ‘ProductX’ project is given a 10 percent raise.
--- 11)	Retrieve a list of employees and the projects they are working on, ordered by department and, within each department, ordered alphabetically by last name, then first name.
 
--- DROP DATABASE IF EXISTS EXPERIMENT_4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DROP DATABASE IF EXISTS EXPERIMENT_4;
 
--- CREATING DATABASE
+
 CREATE DATABASE EXPERIMENT_4;
 
--- USING DATABASE
+
 USE EXPERIMENT_4;
 
--- CREATING TABLES
+
 CREATE TABLE DEPARTMENT(
     Dname VARCHAR(30) NOT NULL,
     Dnumber INT NOT NULL,
@@ -87,7 +87,7 @@ CREATE TABLE DEPENDENT(
     FOREIGN KEY(Essn) REFERENCES EMPLOYEE(Ssn)
 );
 
--- INSERTING DATA
+
 
 INSERT INTO DEPARTMENT(Dname, Dnumber, Mgr_start_date, Mgr_ssn) VALUES('Research', 5, '1988-05-22', NULL);
 INSERT INTO DEPARTMENT(Dname, Dnumber, Mgr_start_date, Mgr_ssn) VALUES('Administration', 4, '1995-01-01', NULL);
@@ -153,48 +153,48 @@ INSERT INTO DEPENDENT(Essn,Dependent_name, Sex, Bdate, Relationship) VALUES('666
 INSERT INTO DEPENDENT(Essn, Dependent_name, Sex, Bdate, Relationship) VALUES('453453453', 'Joyce English', 'F', '1972-07-31', '5631 Rice, Houston, TX');
 
 
--- PROBLEM STATEMENT SOLUTIONS
 
--- 1)   Retrieve the birth date and address of the employee(s) whose name is ‘John B. Smith’.
+
+
 SELECT Bdate, Address FROM EMPLOYEE 
 WHERE Fname = 'John' AND Minit = 'B' AND Lname = 'Smith';
 
--- 2)	Retrieve the name and address of all employees who work for the ‘Research’ department.
+
 SELECT Fname, Minit, Lname, Address FROM EMPLOYEE,DEPARTMENT
 WHERE Dname = 'Research' AND Dnumber = Dno;
 
--- 3)	For every project located in ‘Stafford’, list the project number, the controlling department number, and the department manager’s last name, address, and birth date.
+
 SELECT Lname, address, Bdate FROM EMPLOYEE, PROJECT, DEPARTMENT
 WHERE Plocation = 'Stafford' AND Dnumber = Dnum AND Mgr_ssn = Ssn;
 
--- 4)	Select all combinations of EMPLOYEE Ssn and DEPARTMENT Dname in the database.
+
 SELECT Ssn, Dname
 FROM EMPLOYEE, DEPARTMENT;
 
--- 5)	Retrieve all the attribute values of any EMPLOYEE who works in DEPARTMENT number 5.
+
 SELECT * FROM EMPLOYEE
 WHERE Dno = 5;
 
--- 6)	Retrieve all distinct salary values.
+
 SELECT DISTINCT Salary
 FROM EMPLOYEE;
 
--- 7)	Make a list of all project numbers for projects that involve an employee whose last name is ‘Smith’, either as a worker or as a manager of the department that controls the project.
+
 SELECT Pnumber FROM PROJECT, EMPLOYEE
 WHERE Lname = 'Smith';
 
--- 8)	Retrieve all employees whose address is in Houston, Texas.
+
 SELECT * FROM EMPLOYEE
 WHERE Address LIKE '%Houston, TX';
 
--- 9)	Find all employees who were born during the 1950s
+
 SELECT * FROM EMPLOYEE WHERE Bdate BETWEEN '1950-01-01' AND '1959-12-31';
 
--- 10)	Show the resulting salaries if every employee working on the ‘ProductX’ project is given a 10 percent raise.
+
 SELECT Salary as Previous_salary, Salary + Salary * 0.1 Raised_salary FROM EMPLOYEE, WORKS_ON
 WHERE Pno = 1;
 
--- 11)	Retrieve a list of employees and the projects they are working on, ordered by department and, within each department, ordered alphabetically by last name, then first name.
+
 SELECT Fname, Lname, Pname FROM EMPLOYEE, PROJECT, WORKS_ON
 WHERE EMPLOYEE.Ssn = WORKS_ON.Essn AND PROJECT.Pnumber = WORKS_ON.Pno
 ORDER BY Dno, Lname, Fname;

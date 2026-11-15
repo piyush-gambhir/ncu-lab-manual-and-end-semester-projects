@@ -1,10 +1,10 @@
-/*
-Write a program to print the area of a rectangle by creating a class named 'Area' taking the values of its length and breadth as parameters of its constructor and having a method named 'returnArea' which returns the area of the rectangle. Length and breadth of the rectangle are entered through the keyboard.
-*/
 
-/**
- * practical_4_problem_statement_3
- */
+
+
+
+
+
+
 
 import java.util.Scanner;
 

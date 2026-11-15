@@ -1,11 +1,11 @@
-/*
-Problem Statement
 
-Write a program to implement Following operations using Binary Search Tree:
-1.Insertion
-2.Deletion
-3.Traversal [PREORDER, POSTORDER, INORDER]
-*/
+
+
+
+
+
+
+
 
 class BinarySearchTree {
 
@@ -103,9 +103,9 @@ class BinarySearchTree {
     }
 }
 
-/**
- * problem_statement_experiment_15
- */
+
+
+
 public class problem_statement_experiment_15 {
 
     public static void main(String[] args) {

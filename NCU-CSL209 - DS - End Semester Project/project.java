@@ -1,16 +1,16 @@
-/*
 
-Project 8: 
-Build a calendar app that saves appointments and reminders for things like birthdays, to do lists.
-DoD:
-1. Find the day
-2. Print calendar of a month.
-3. Add reminders or notes
-4. Use array for calendar days and then make a linked list of tasks for corresponding days.
 
-*/
 
-// importing required libraries
+
+
+
+
+
+
+
+
+
+
 import java.util.*;
 import java.io.*;
 
@@ -365,9 +365,9 @@ class calender {
 
 }
 
-/**
- * project
- */
+
+
+
 public class project {
     static Scanner sc = new Scanner(System.in);
 
@@ -455,7 +455,7 @@ public class project {
 
     public static void main(String[] args) {
         calender cal = new calender();
-        // calender.readYearsDataFromFile();
+
         while (true) {
             printMenu();
             System.out.print("\nEnter your choice: ");
@@ -490,7 +490,7 @@ public class project {
                     cal.printBirthdaysInAMonth(inputYear(), inputMonth());
                     break;
                 case 10:
-                    // calender.writeYearsDataToFile();
+
                     System.exit(0);
                     break;
             }

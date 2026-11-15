@@ -1,19 +1,19 @@
 import java.util.*;
-/*
 
-Problem Statement
 
-Write a program to convert Infix expression into Postfix.
-Given a string str consisting of an infix expression, convert it into Postfix
-Examples:
-Input: str = (a+b)*c
-Output: ab+c*
 
-*/
 
-/**
- * problem_statement_experiment_10
- */
+
+
+
+
+
+
+
+
+
+
+
 public class problem_statement_experiment_10 {
 
     public static int getPrecedence(char operator) {

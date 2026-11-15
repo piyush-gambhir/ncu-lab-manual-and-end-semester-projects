@@ -1,17 +1,17 @@
-/*
- * Problem Statement:
- * Create an array of integer with size n. Return the difference between the largest and the smallest value inside that array.
- */
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * problem_statement
- */
+
+
+
 public class problem_statement_experiment_1 {
 
-    // Method enterArrayElements(int[] arr)
-    // Method for taking input for array elements
+
+
     public static void enterArrayElements(int[] arr) {
         Scanner sc = new Scanner(System.in);
 
@@ -28,8 +28,8 @@ public class problem_statement_experiment_1 {
         sc.close();
     }
 
-    // Method printArrayElements(int[] arr)
-    // Method for printing array elements
+
+
     public static void printArrayElements(int[] arr) {
         System.out.print("""
                 ====================================
@@ -41,8 +41,8 @@ public class problem_statement_experiment_1 {
         }
     }
 
-    // Method getLargestElement(int[] arr)
-    // Method to get largest value in the array
+
+
     public static int getLargestElemnt(int[] arr) {
         int largestElement = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -53,8 +53,8 @@ public class problem_statement_experiment_1 {
         return largestElement;
     }
 
-    // Method getSmallestElement(int[] arr)
-    // Method to get smallest value in the array
+
+
     public static int getSmallestElemnt(int[] arr) {
         int smallestElement = 0;
         for (int i = 0; i < arr.length; i++) {

@@ -1,12 +1,12 @@
-/*
-Write a program to change the file permissions.
-*/
+
+
+
 
 import java.io.*;
 
-/**
- * practical_9_problem_statement_2
- */
+
+
+
 public class practical_9_problem_statement_2 {
 
     public static void main(String[] args) {

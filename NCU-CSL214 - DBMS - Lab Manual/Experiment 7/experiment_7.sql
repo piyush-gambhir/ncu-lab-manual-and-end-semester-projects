@@ -1,25 +1,25 @@
--- Problem Statement
--- Consider the COMPANY database in Experiment 1 and execute the following queries:
--- 1)	Make a list of all project numbers for projects that involve an employee whose last name is ‘Smith’, either as a worker or as a manager of the department that controls the project.
--- 2)	Select the Essns of all employees who work on the same project and hours as some project that employee ‘John Smith’ (whose Ssn = ‘123456789’) works on.
--- 3)	Return the names of employees whose salary is greater than the salary of all the employees in department 5
--- 4)	Retrieve the name of each employee who has a dependent with the same first name and is the same sex as the employee
--- 5)	Retrieve the names of employees who have no dependents
--- 6)	List the names of managers who have at least one dependent using EXISTS and NOT EXISTS functions
--- 7)	Retrieve the name of each employee who works on all the projects controlled by department number 5 using EXISTS and NOT EXISTS functions
--- 8)	Retrieve the names of all employees who have two or more dependents
--- 9)	Retrieves the names of all employees who work on only one project
 
--- DROP DATABASE IF EXISTS EXPERIMENT_7;
+
+
+
+
+
+
+
+
+
+
+
+
 DROP DATABASE IF EXISTS EXPERIMENT_7;
 
--- CREATING DATABASE
+
 CREATE DATABASE EXPERIMENT_7;
 
--- USING DATABASE
+
 USE EXPERIMENT_7;
 
--- CREATING TABLES
+
 CREATE TABLE DEPARTMENT(
     Dname VARCHAR(30) NOT NULL,
     Dnumber INT NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE DEPENDENT(
     FOREIGN KEY(Essn) REFERENCES EMPLOYEE(Ssn)
 );
 
--- INSERTING DATA
+
 
 INSERT INTO DEPARTMENT(Dname, Dnumber, Mgr_start_date, Mgr_ssn) VALUES('Research', 5, '1988-05-22', NULL);
 INSERT INTO DEPARTMENT(Dname, Dnumber, Mgr_start_date, Mgr_ssn) VALUES('Administration', 4, '1995-01-01', NULL);
@@ -150,15 +150,15 @@ INSERT INTO DEPENDENT(Essn, Dependent_name, Sex, Bdate, Relationship) VALUES('98
 INSERT INTO DEPENDENT(Essn,Dependent_name, Sex, Bdate, Relationship) VALUES('666884444', 'Ramesh Narayan', 'M', '1962-09-15', '975 Fire Oak, Humble, TX');
 INSERT INTO DEPENDENT(Essn, Dependent_name, Sex, Bdate, Relationship) VALUES('453453453', 'Joyce English', 'F', '1972-07-31', '5631 Rice, Houston, TX');
 
--- Problem Statement Answers
 
--- 1)	Make a list of all project numbers for projects that involve an employee whose last name is ‘Smith’, either as a worker or as a manager of the department that controls the project.
+
+
 SELECT DISTINCT Pnumber AS 'Project Number' 
 FROM PROJECT
 WHERE Dnum IN (SELECT Dnumber FROM DEPARTMENT WHERE Mgr_ssn IN (SELECT Ssn FROM EMPLOYEE WHERE Lname = 'Smith'))
 OR Pnumber IN (SELECT Pno FROM WORKS_ON WHERE Essn IN (SELECT Ssn FROM EMPLOYEE WHERE Lname = 'Smith'));
 
--- 2)	Select the Essns of all employees who work on the same project and hours as some project that employee ‘John Smith’ (whose Ssn = ‘123456789’) works on.
+
 SELECT DISTINCT Essn
 FROM WORKS_ON
 WHERE Pno IN (
@@ -172,7 +172,7 @@ AND Hours IN (
     WHERE Essn = '123456789'
 );
 
--- 3)	Return the names of employees whose salary is greater than the salary of all the employees in department 5
+
 SELECT Fname, Lname 
 FROM EMPLOYEE
 WHERE Salary > ALL (
@@ -180,19 +180,19 @@ WHERE Salary > ALL (
     WHERE Dno = 5
 );
 
--- 4)	Retrieve the name of each employee who has a dependent with the same first name and is the same sex as the employee
+
 SELECT Fname, Lname
 FROM EMPLOYEE E
 WHERE E.Ssn IN (SELECT Essn FROM DEPENDENT as D WHERE E.Fname = D.Dependent_name AND E.Sex = D.Sex);
 
--- 5)	Retrieve the names of employees who have no dependents
+
 SELECT Fname, Lname 
 FROM EMPLOYEE
 WHERE Ssn NOT IN (
     SELECT Essn FROM DEPENDENT
 );
 
--- 6)	List the names of managers who have at least one dependent using EXISTS and NOT EXISTS functions
+
 SELECT Fname, Lname
 FROM EMPLOYEE 
 WHERE EXISTS (
@@ -200,7 +200,7 @@ WHERE EXISTS (
     WHERE Essn = Ssn
 );
 
--- 7)	Retrieve the name of each employee who works on all the projects controlled by department number 5 using EXISTS and NOT EXISTS functions
+
 SELECT Fname, Lname
 FROM EMPLOYEE
 WHERE NOT EXISTS (
@@ -213,7 +213,7 @@ WHERE NOT EXISTS (
 );
 
 
--- 8)	Retrieve the names of all employees who have two or more dependents
+
 SELECT Fname, Lname
 FROM EMPLOYEE
 WHERE Ssn IN (
@@ -223,7 +223,7 @@ WHERE Ssn IN (
     HAVING COUNT(*) >= 2
 );
 
--- 9)	Retrieves the names of all employees who work on only one project
+
 SELECT Fname, Lname
 FROM EMPLOYEE
 WHERE Ssn IN (

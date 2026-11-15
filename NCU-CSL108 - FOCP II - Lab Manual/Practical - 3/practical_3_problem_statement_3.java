@@ -1,17 +1,17 @@
-/*
-Write a Java Program to count even and odd numbers in an array.
-Definition of Done
-DoD 1: The program should ask the user to enter the elements of the array.
-DoD 2: Even elements will be stored in EvenArray[] and odd elements will be stored in oddArray[].
-DoD 3: Display all three arrays along with their length.
 
-*/
+
+
+
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * practical_3_problem_statement_3
- */
+
+
+
 
 public class practical_3_problem_statement_3 {
 

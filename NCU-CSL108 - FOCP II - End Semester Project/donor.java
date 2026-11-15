@@ -1,26 +1,26 @@
-// Defining Package
+
 package BloodBank;
 
-// importing the required built-in librarires
+
 import java.util.*;
 import java.io.*;
 import java.io.FileWriter;
 
-// Donor Class
+
 public class donor {
 
-    private String name; // Donor Name
-    private int age; // Donor Age
-    private String anyDisease; // Donor Suffering From Any Disease
-    private String bloodGroup; // Donor Blood Group
+    private String name;
+    private int age;
+    private String anyDisease;
+    private String bloodGroup;
 
-    // Empty constructor for Donor class.
+
     public donor() {
 
     }
 
-    // Parameterized constructor for Donor Class
-    // This constructor is used for creating donor records.
+
+
     public donor(String Name, int Age, String AnyDisease, String BloodGroup) {
         setName(Name);
         setAge(Age);
@@ -28,56 +28,56 @@ public class donor {
         setBloodGroup(BloodGroup);
     }
 
-    // Method setName()
-    // This method is used to set donor name.
+
+
     public void setName(String Name) {
         this.name = Name;
     }
 
-    // Method setAge()
-    // This method is used to set donor age.
+
+
     public void setAge(int Age) {
         this.age = Age;
     }
 
-    // Method setAnyDisease()
-    // This method is used to set donor suffering from any disease.
+
+
     public void setAnyDisease(String AnyDisease) {
         this.anyDisease = AnyDisease;
     }
 
-    // Method setBloodGroup()
-    // This method is used to set donor Blood.
+
+
     public void setBloodGroup(String BloodGroup) {
         this.bloodGroup = BloodGroup;
     }
 
-    // Method getName()
-    // This method is used to fetch donor name.
+
+
     public String getName() {
         return this.name;
     }
 
-    // Method getAge()
-    // This method is used to fetch donor age.
+
+
     public int getAge() {
         return this.age;
     }
 
-    // Method getAnyDisease()
-    // This method is used to fetch donor suffering any_disease.
+
+
     public String getAnyDisease() {
         return this.anyDisease;
     }
 
-    // Method getBloodGroup()
-    // This method is used to fetch donor blood group.
+
+
     public String getBloodGroup() {
         return this.bloodGroup;
     }
 
-    // Method Display()
-    // This method displays donor record in structured view.
+
+
     public void display() {
         System.out.println("""
                 -------------------
@@ -92,9 +92,9 @@ public class donor {
 
     }
 
-    // Method addDonorRecord()
-    // This function takes donor details such as name, age, any disesase, blood
-    // group as input and create a record for donor.
+
+
+
     public void addDonorRecord() {
         Scanner sc = new Scanner(System.in);
         Boolean moreRecord = true;
@@ -176,9 +176,9 @@ public class donor {
 
     }
 
-    // Method addDonorRecordToFile()
-    // This method appends the donor record to the file "donorRecords.txt" text
-    // file.
+
+
+
     public void addDonorRecordToFile() throws IOException {
         String outputText = this.getName() + "|" + this.getAge() + "|" + this.getAnyDisease() + "|"
                 + this.getBloodGroup();
@@ -205,9 +205,9 @@ public class donor {
         }
     }
 
-    // Method getDonorRecordFromFile()
-    // This method fetch the donor records from the file "donor_records.txt" and
-    // add them to an ArrayList donor_records
+
+
+
     public ArrayList<donor> getDonorRecordFromFile() throws FileNotFoundException {
         File donorRecords = new File("donorRecords.txt");
         Scanner sc = new Scanner(donorRecords);
@@ -224,9 +224,9 @@ public class donor {
         return donorList;
     }
 
-    // Method searchDonorWithBloodGroup
-    // This function takes blood group as input and then search for donors with the
-    // enetered blood group.
+
+
+
     public void searchDonorWithBloodGroup() {
         Scanner sc = new Scanner(System.in);
 
@@ -271,9 +271,9 @@ public class donor {
         }
     }
 
-    // Method getDonorListAscendingOrder()
-    // This method sort the records in asscending order and the display all the
-    // records.
+
+
+
     public void getDonorListAscendingOrder() {
         Scanner sc = new Scanner(System.in);
 

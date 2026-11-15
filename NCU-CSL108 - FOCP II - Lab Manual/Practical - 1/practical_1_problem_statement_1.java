@@ -1,15 +1,15 @@
-/*
-Write a program that takes two integers (values to be given within the program) and displays the output of the following operators: addition, subtraction, multiplication, division and modulus.
-Definition of Done:
-DoD 1: Assign two numbers to two variables.
-DoD2: Use separate variables to store the results.
-*/
+
+
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * practical_1_problem_statement_1
- */
+
+
+
 public class practical_1_problem_statement_1 {
 
     public static void main(String[] args) {

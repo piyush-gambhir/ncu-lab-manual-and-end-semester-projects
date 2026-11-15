@@ -1,6 +1,6 @@
 #include <Servo.h>
 #include <AFMotor.h>
-#include <SoftwareSerial.h> // Required for voice control
+#include <SoftwareSerial.h>
 #include <Arduino.h>
 #include <Wire.h>
 
@@ -16,17 +16,17 @@ int Left;
 int Right;
 int L = 0;
 int R = 0;
-bool bypassObstacleAvoidance = false; // Flag to bypass obstacle avoidance
+bool bypassObstacleAvoidance = false;
 Servo servo;
 AF_DCMotor M1(1);
 AF_DCMotor M2(2);
 AF_DCMotor M3(3);
 AF_DCMotor M4(4);
-SoftwareSerial voiceSerial(2, 3); // RX, TX for voice control
+SoftwareSerial voiceSerial(2, 3);
 
 void setup() {
   Serial.begin(9600);
-  voiceSerial.begin(9600); // Initialize voice serial communication
+  voiceSerial.begin(9600);
   pinMode(Trig, OUTPUT);
   pinMode(Echo, INPUT);
   servo.attach(motor);
@@ -45,7 +45,7 @@ void loop() {
 void Obstacle() {
   if (!bypassObstacleAvoidance) {
     distance = ultrasonic();
-    if (distance <= 12) { // Use ultrasonic sensor for obstacles within 12 cm
+    if (distance <= 12) {
       Stop();
       backward();
       delay(500);
@@ -64,10 +64,10 @@ void Obstacle() {
         Stop();
       }
     } else {
-      forward(); // If no obstacle is detected, move forward
+      forward();
     }
   } else {
-    // Obstacle avoidance bypassed
+
   }
 }
 
@@ -78,7 +78,7 @@ int ultrasonic() {
   delayMicroseconds(5);
   digitalWrite(Trig, LOW);
   long t = pulseIn(Echo, HIGH);
-  long cm = t / 29 / 2; //time convert distance
+  long cm = t / 29 / 2;
   return cm;
 }
 
@@ -137,7 +137,7 @@ void Bluetoothcontrol() {
     Serial.println(value);
     if (value == 'U') {
       forward();
-      bypassObstacleAvoidance = true; // Bypass obstacle avoidance when any command is received
+      bypassObstacleAvoidance = true;
     } else if (value == 'D') {
       backward();
       bypassObstacleAvoidance = true;
@@ -151,7 +151,7 @@ void Bluetoothcontrol() {
       Stop();
       bypassObstacleAvoidance = true;
     } else {
-      bypassObstacleAvoidance = false; // Resume obstacle avoidance if no command is received
+      bypassObstacleAvoidance = false;
     }
   }
 }
@@ -162,7 +162,7 @@ void Voicecontrol() {
     Serial.println(value);
     if (value == 'F') {
       forward();
-      bypassObstacleAvoidance = true; // Bypass obstacle avoidance when any voice command is received
+      bypassObstacleAvoidance = true;
     } else if (value == 'B') {
       backward();
       bypassObstacleAvoidance = true;
@@ -176,7 +176,7 @@ void Voicecontrol() {
       Stop();
       bypassObstacleAvoidance = true;
     } else {
-      bypassObstacleAvoidance = false; // Resume obstacle avoidance if no voice command is received
+      bypassObstacleAvoidance = false;
     }
   }
 }

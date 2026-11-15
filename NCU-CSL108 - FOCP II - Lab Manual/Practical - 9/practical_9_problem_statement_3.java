@@ -1,12 +1,12 @@
-/* 
-Write a program to perform simple read and write operation into file.
-*/
+
+
+
 
 import java.io.*;
 
-/**
- * practical_9_problem_statement_3
- */
+
+
+
 public class practical_9_problem_statement_3 {
 
     public static void writeFile(String fileName) {

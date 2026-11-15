@@ -1,23 +1,23 @@
-/*
-
-Problem Statement:
-Write a program to create a Circular linked list of n nodes and perform:
-•	Insertion
-    o	At the beginning
-    o	At the end
-    o	At a specific location
-
-•	Deletion
-    o	At the beginning
-    o	At the end 
-    o	At a specific location
-
- */
 
 
-/**
- * problem_statement_experiment_6
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public class problem_statement_experiment_6 {
     static Node head;
 

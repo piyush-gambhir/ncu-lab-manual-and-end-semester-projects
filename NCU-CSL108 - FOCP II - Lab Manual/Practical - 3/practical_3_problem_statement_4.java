@@ -1,18 +1,18 @@
-/*
-Write a Java program to read numbers in an integer array of size 5 and display the following (using functions for each functionality):
-i) Sum of all the elements
-ii) Sum of alternate elements in the array.
 
-Definition of Done:
-DoD 1: The program should ask the user to enter the elements of the array.
-DoD 2: The program should display a menu with the above choices and ask the user to choose one of the choices.
-*/
+
+
+
+
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * practical_3_problem_statement_4
- */
+
+
+
 
 public class practical_3_problem_statement_4 {
 
