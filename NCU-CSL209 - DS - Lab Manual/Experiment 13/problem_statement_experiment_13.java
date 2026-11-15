@@ -1,12 +1,12 @@
-/*
 
-Write a program to implement Following operations using Circular Queue: 
-1. Enqueue() 
-2. Dequeue() 
 
-Using array implementation
 
-*/
+
+
+
+
+
+
 
 class circularQueueArray {
 
@@ -60,9 +60,9 @@ class circularQueueArray {
     }
 }
 
-/**
- * problem_statement_experiment_13
- */
+
+
+
 public class problem_statement_experiment_13 {
 
     public static void main(String[] args) {

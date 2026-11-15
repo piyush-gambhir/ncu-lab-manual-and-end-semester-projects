@@ -1,19 +1,19 @@
-/*
 
-Problem Statement
 
-Write a program to implement:
-1. Bubble Sort 
-2. Insertions Sort 
-3. Selection Sort
-4. Quick Sort
-5. Merge Sort
 
-*/
 
-/**
- * problem_statement_experiment_16
- */
+
+
+
+
+
+
+
+
+
+
+
+
 public class problem_statement_experiment_16 {
 
     public static void bubbleSort(int[] arr) {
@@ -22,7 +22,7 @@ public class problem_statement_experiment_16 {
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
                 if (arr[j - 1] > arr[j]) {
-                    // swap elements
+
                     temp = arr[j - 1];
                     arr[j - 1] = arr[j];
                     arr[j] = temp;

@@ -1,20 +1,20 @@
-/*
-3.1 Write a program to implement merge sort algorithm.
-*/
+
+
+
 
 import java.util.Scanner;
 
-/**
- * experiment_3_problem_statement_1
- */
+
+
+
 public class experiment_3_problem_statement_1 {
 
-    // Recursive merge sort function to sort the array
 
-    /*
-     * Time Complexity: O(nlogn)
-     * Space Complexity: O(n) - Recusrive Stack Space
-     */
+
+
+
+
+
     private static void recursiveMergeSort(int[] arr, int start, int end) {
         if (start < end) {
             int mid = (start + end) / 2;
@@ -28,7 +28,7 @@ public class experiment_3_problem_statement_1 {
         recursiveMergeSort(arr, 0, arr.length - 1);
     }
 
-    // merge function to merge two subarrays
+
     private static void merge(int[] arr, int start, int mid, int end) {
         int n1 = mid - start + 1;
         int n2 = end - mid;

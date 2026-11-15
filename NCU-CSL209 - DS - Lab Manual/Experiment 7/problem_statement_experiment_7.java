@@ -1,27 +1,27 @@
-/*
-Problem Statement
 
-Write a program to create a stack and perform:
-• POP
-• PUSH
-• PEEK
-• ISEMPTY
-• ISFULL
 
-1) Use Arrays for Implementation
-2) Use Linked List for Implementation
 
-*/
 
-// Implementing Stack Using Arrays
+
+
+
+
+
+
+
+
+
+
+
+
 class stackArray {
     public int stackSize = 5;
 
     int[] stack = new int[stackSize];
     int top = -1;
 
-    // Method POP()
-    // Method to delete top most element of the stack.
+
+
     public int POP() {
         if (top < 0) {
             System.out.println("Stack Underflow!");
@@ -34,8 +34,8 @@ class stackArray {
         }
     }
 
-    // Method PUSH()
-    // Method to push element into stack.
+
+
     public void PUSH(int data) {
         if (top >= stackSize - 1) {
             System.out.println("Stack OverFlow!");
@@ -47,8 +47,8 @@ class stackArray {
         }
     }
 
-    // Method PEEK()
-    // Method to get the top most elemnt of the stack.
+
+
     public int PEEK() {
         if (top < 0) {
             System.out.println("Stack Underflow!");
@@ -60,8 +60,8 @@ class stackArray {
         }
     }
 
-    // Method ISEMPTY()
-    // Method to check if the stack is empty or not.
+
+
     public boolean ISEMPTY() {
         if (top < 0) {
             return true;
@@ -72,8 +72,8 @@ class stackArray {
         }
     }
 
-    // Method ISFULL()
-    // Method to check if the stack is full or not.
+
+
     public boolean ISFULL() {
         if (top == stackSize) {
             return true;
@@ -83,7 +83,7 @@ class stackArray {
     }
 }
 
-// Implementing Stack Using Linked List
+
 class stackLinkedList {
 
     stackNode top;
@@ -97,8 +97,8 @@ class stackLinkedList {
         }
     }
 
-    // Method PUSH()
-    // Method to push element into stack.
+
+
     public void PUSH(int data) {
 
         stackNode newNode = new stackNode(data);
@@ -113,8 +113,8 @@ class stackLinkedList {
         }
     }
 
-    // Method POP()
-    // Method to delete top most element of the stack.
+
+
     public int POP() {
 
         int popValue = -1;
@@ -130,8 +130,8 @@ class stackLinkedList {
 
     }
 
-    // Method PEEK()
-    // Method to get the top most elemnt of the stack.
+
+
     public int PEEK() {
         if (top == null) {
             System.out.println("Stack is Empty!");
@@ -143,8 +143,8 @@ class stackLinkedList {
         }
     }
 
-    // Method ISEMPTY()
-    // Method to check if the stack is empty or not.
+
+
     public boolean ISEMPTY() {
         if (top == null) {
             return true;
@@ -157,13 +157,13 @@ class stackLinkedList {
     }
 }
 
-/**
- * problem_statement_experiment_7
- */
+
+
+
 public class problem_statement_experiment_7 {
     public static void main(String[] args) {
 
-        // Using Array Implementation of Stack
+
         stackArray stackA = new stackArray();
 
         System.out.println("""
@@ -184,7 +184,7 @@ public class problem_statement_experiment_7 {
 
         System.out.println("\n");
 
-        // Using Linked List Implementation of Stack
+
         stackLinkedList stackLL = new stackLinkedList();
 
         System.out.println("""

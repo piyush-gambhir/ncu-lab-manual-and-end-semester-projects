@@ -1,17 +1,17 @@
-/*
 
-Problem Statement
 
-Write a program to implement Following operations using Doubly ended Queue: 
-1. Enqueue() 
-2. Dequeue() 
-3. Isfull()
-4. Isempty()
-5. Peek()
 
-Using array implementation
 
-*/
+
+
+
+
+
+
+
+
+
+
 
 class doublyEndedQueueArray {
 
@@ -83,9 +83,9 @@ class doublyEndedQueueArray {
     }
 }
 
-/**
- * problem_statement_experiment_14
- */
+
+
+
 public class problem_statement_experiment_14 {
 
     public static void main(String[] args) {

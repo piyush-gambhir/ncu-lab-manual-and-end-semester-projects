@@ -1,20 +1,20 @@
-/*
-3.2 Write a program to implement quick sort algorithm.
-*/
+
+
+
 
 import java.util.Scanner;
 
-/**
- * experiment_3_problem_statement_2
- */
+
+
+
 public class experiment_3_problem_statement_2 {
 
-    // Recursive quick sort function to sort the array
 
-    /*
-     * Time Complexity: O(n^2) 
-     * Space Complexity: O(n) - Recusrive Stack Space
-     */
+
+
+
+
+
     private static void recursiveQuickSort(int[] arr, int start, int end) {
         if (start < end) {
             int pivot = partition(arr, start, end);
@@ -27,7 +27,7 @@ public class experiment_3_problem_statement_2 {
         recursiveQuickSort(arr, 0, arr.length - 1);
     }
 
-    // partition function to partition the array
+
     private static int partition(int[] arr, int start, int end) {
         int pivot = arr[end];
         int i = start - 1;

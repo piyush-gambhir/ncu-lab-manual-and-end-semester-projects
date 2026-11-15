@@ -1,12 +1,12 @@
-/*
-Implement Prim’s and Kruskal’s algorithms for finding minimum spanning tree of a given graph.
-*/
+
+
+
 
 import java.util.*;
 
-/**
- * experiment_6_problem_statement_prims
- */
+
+
+
 public class experiment_6_problem_statement_prims {
 
     public static void primsMST(int[][] graph) {
@@ -67,7 +67,7 @@ public class experiment_6_problem_statement_prims {
                 { 0, 5, 7, 9, 0 }
         };
 
-        // Priting Graph Adjacency Matrix
+
         System.out.println("Graph Adjacency Matrix:");
         for (int i = 0; i < graph.length; i++) {
             for (int j = 0; j < graph[i].length; j++) {
@@ -76,7 +76,7 @@ public class experiment_6_problem_statement_prims {
             System.out.println();
         }
 
-        // Printing Prims Minimum Spanning Tree
+
         System.out.println("Prims Minimum Spanning Tree:");
         primsMST(graph);
     }

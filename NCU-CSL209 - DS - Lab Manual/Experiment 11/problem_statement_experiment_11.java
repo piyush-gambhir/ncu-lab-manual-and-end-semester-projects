@@ -1,18 +1,18 @@
-/*
 
-Problem Statement
-Write a program to implement Tower of Hanoi
 
-*/
+
+
+
+
 
 import java.util.*;
 
-/**
- * problem_statement_experiment_11
- */
+
+
+
 public class problem_statement_experiment_11 {
 
-    // Recursive Implementation of Tower of Hanoi Problem
+
     public static void recursiveTowerOfHanoi(int numberOfDisks, String tower1, String tower2, String tower3) {
         if (numberOfDisks == 0) {
             System.out.println("No disks to move");

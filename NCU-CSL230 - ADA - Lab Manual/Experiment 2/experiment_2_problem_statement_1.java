@@ -1,20 +1,20 @@
-/*
-2.1	Write a program to implement insertion sort algorithm.
-*/
+
+
+
 
 import java.util.Scanner;
 
-/**
- * experiment_2_problem_statement_1
- */
+
+
+
 public class experiment_2_problem_statement_1 {
 
-    // Function to sort array using insertion sort
 
-    /*
-     * Time Complexity: O(n^2) - Number of iterations
-     * Space Complexity: O(1) - Constant Space - No extra space is used
-     */
+
+
+
+
+
     public static void insertionSort(int[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {

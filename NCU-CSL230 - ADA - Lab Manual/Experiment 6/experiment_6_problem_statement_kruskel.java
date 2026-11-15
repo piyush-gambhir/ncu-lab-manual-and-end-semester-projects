@@ -1,12 +1,12 @@
-/*
-Implement Prim’s and Kruskal’s algorithms for finding minimum spanning tree of a given graph.
-*/
+
+
+
 
 import java.util.*;
 
-/**
- * experiment_6_problem_statement_kruskel
- */
+
+
+
 public class experiment_6_problem_statement_kruskel {
     static class Edge {
         int src, dest, weight;

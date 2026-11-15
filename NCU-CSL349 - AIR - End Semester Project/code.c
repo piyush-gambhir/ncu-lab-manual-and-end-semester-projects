@@ -12,7 +12,7 @@
 
 Servo steeringServo;
 AF_DCMotor motors[4] = {AF_DCMotor(1), AF_DCMotor(2), AF_DCMotor(3), AF_DCMotor(4)};
-SoftwareSerial voiceSerial(2, 3); // RX, TX
+SoftwareSerial voiceSerial(2, 3);
 
 bool isObstacleAvoidanceEnabled = true;
 char command;
@@ -52,7 +52,7 @@ int measureDistance() {
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
   long duration = pulseIn(ECHO_PIN, HIGH);
-  return duration / 58; // Convert duration to distance
+  return duration / 58;
 }
 
 void moveForward() {
@@ -68,11 +68,11 @@ void moveBackward() {
 }
 
 void turnRight() {
-  // Implementation similar to moveForward, but with direction changes for turning
+
 }
 
 void turnLeft() {
-  // Implementation similar to moveForward, but with direction changes for turning
+
 }
 
 void stopAllMotors() {
@@ -99,7 +99,7 @@ void performObstacleAvoidance() {
 
 int measureDistanceAtAngle(int angle) {
   steeringServo.write(angle);
-  delay(200); // Shorter delay for faster response
+  delay(200);
   return measureDistance();
 }
 
@@ -118,13 +118,13 @@ void handleVoiceCommands() {
 }
 
 void executeCommand(char cmd) {
-  isObstacleAvoidanceEnabled = false; // Disable obstacle avoidance when receiving any command
+  isObstacleAvoidanceEnabled = false;
   switch (cmd) {
     case 'F': moveForward(); break;
     case 'B': moveBackward(); break;
     case 'L': turnLeft(); break;
     case 'R': turnRight(); break;
     case 'S': stopAllMotors(); break;
-    default: isObstacleAvoidanceEnabled = true; // Enable obstacle avoidance on invalid command
+    default: isObstacleAvoidanceEnabled = true;
   }
 }

@@ -1,12 +1,12 @@
-/*
-Write a program to check if the file exist is a file or directory.
-*/
+
+
+
 
 import java.io.*;
 
-/**
- * practical_9_problem_statement_1
- */
+
+
+
 
 public class practical_9_problem_statement_1 {
 

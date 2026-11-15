@@ -1,18 +1,18 @@
-/*
 
-Problem Statement
 
-Write a program to implement Following operations using Queue: 
-1.Enqueue() 
-2.Dequeue() 
-3.Isfull()
-4.Isempty()
-5.Peek()
 
-a) Using array implementation 
-b) Using Linked List Implementation
 
-*/
+
+
+
+
+
+
+
+
+
+
+
 
 class queueArray {
 
@@ -111,9 +111,9 @@ class queueLinkedList {
     }
 }
 
-/**
- * problem_statement_experiment_12
- */
+
+
+
 public class problem_statement_experiment_12 {
 
     public static void main(String[] args) {

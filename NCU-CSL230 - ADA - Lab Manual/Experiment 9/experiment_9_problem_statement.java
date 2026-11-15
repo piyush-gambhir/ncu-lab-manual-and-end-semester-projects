@@ -1,61 +1,61 @@
-/*
-Write a program for N-Queen’s problem using Backtracking.
-*/
 
-/*
-Complexity Analysis: 
-Time Complexity: O(N!).
-Explanation: There are N possibilities to put the first queen, not more than N-1 to put the second one, not more than N-2 for the third one etc. In total that results in O(N!) time complexity.
 
-Space Complexity: O(N).
-Explanantion: We use O(N) extra space to store the solution.
-*/
+
+
+
+
+
+
+
+
+
+
 
 import java.util.Scanner;
 import java.util.ArrayList;
 
-/**
- * experiment_9_problem_statement
- */
+
+
+
 public class experiment_9_problem_statement {
 
-    // isSafe function to check if a queen can be placed on board[row][column]
+
     private static boolean isSafe(int[][] board, int row, int column) {
-        // check if there is a queen in the same row
+
         for (int i = 0; i < column; i++) {
             if (board[row][i] == 1) {
                 return false;
             }
         }
 
-        // check if there is a queen in the same column
+
         for (int i = 0; i < row; i++) {
             if (board[i][column] == 1) {
                 return false;
             }
         }
 
-        // check if there is a queen in the upper left diagonal
+
         for (int i = row, j = column; i >= 0 && j >= 0; i--, j--) {
             if (board[i][j] == 1) {
                 return false;
             }
         }
-        // check if there is a queen in the lower left diagonal
+
         for (int i = row, j = column; i < board.length && j >= 0; i++, j--) {
             if (board[i][j] == 1) {
                 return false;
             }
         }
 
-        // check if there is a queen in the lower right diagonal
+
         for (int i = row, j = column; i < board.length && j < board.length; i++, j++) {
             if (board[i][j] == 1) {
                 return false;
             }
         }
 
-        // check if there is a queen in the upper right diagonal
+
         for (int i = row, j = column; i >= 0 && j < board.length; i--, j++) {
             if (board[i][j] == 1) {
                 return false;
@@ -65,7 +65,7 @@ public class experiment_9_problem_statement {
         return true;
     }
 
-    // printSolution function to print the solution
+
     private static void printSolution(int[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
@@ -80,7 +80,7 @@ public class experiment_9_problem_statement {
         System.out.println("\n");
     }
 
-    // saveSolution function to save the solution
+
     private static void saveSolution(int[][] board, ArrayList<int[][]> solutions) {
         int[][] solution = new int[board.length][board.length];
         for (int i = 0; i < board.length; i++) {
@@ -91,15 +91,15 @@ public class experiment_9_problem_statement {
         solutions.add(solution);
     }
 
-    // solveNQueenHelper function to solve N Queen problem
+
     private static void solveNQueenHelper(int[][] board, int column, ArrayList<int[][]> solutions) {
-        // if all queens are placed then return true and print the solution
+
         if (column >= board.length) {
             saveSolution(board, solutions);
             return;
         }
 
-        // place the queen in the column and check if it is safe
+
         for (int i = 0; i < board.length; i++) {
             if (isSafe(board, i, column)) {
                 board[i][column] = 1;
@@ -109,7 +109,7 @@ public class experiment_9_problem_statement {
         }
     }
 
-    // solveNQueen function to solve N Queen problem
+
     public static void solveNQueen(int n) {
         int[][] board = new int[n][n];
         ArrayList<int[][]> solutions = new ArrayList<int[][]>();

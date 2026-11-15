@@ -1,14 +1,14 @@
-/*
 
-a) Write a program in java to check if a class can extends another class and can implement one and more than one interface. 
-b) Write a program in java to check if an interface can extend other interface.
-c) Write a program in java to check if an interface can also extend multiple interfaces. 
 
-*/
 
-/**
- * practical_6_problem_statement_1
- */
+
+
+
+
+
+
+
+
 
 interface interface1 {
     void display1();

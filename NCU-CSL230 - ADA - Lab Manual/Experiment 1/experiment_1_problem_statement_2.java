@@ -1,20 +1,20 @@
-/*
-1.2	Write a program for Fibonacci series (Recursive) and calculate the time and space complexity of the program
-*/
+
+
+
 
 import java.util.Scanner;
 
-/**
- * experiment_1_problem_statement_1
- */
+
+
+
 public class experiment_1_problem_statement_2 {
 
-    // Iterative function to calculate the Fibonacci of a number
 
-    /*
-     * Time Complexity: O(n) - Linear Time - Number of iterations
-     * Space Complexity: O(1) - Constant Space - No extra space is used
-     */
+
+
+
+
+
 
     public static int iterativeFibonacci(int n) {
         int a = 0, b = 1, c = 0;
@@ -32,12 +32,12 @@ public class experiment_1_problem_statement_2 {
         }
     }
 
-    // Recursive function to calculate the Fibonacci of a number
 
-    /*
-     * Time Complexity: O(2^n) - Exponential Time - Number of recursive calls
-     * Space Complexity: O(n) - Recusive Stack Space to store the recursive calls
-     */
+
+
+
+
+
     public static int recursiveFibonacci(int n) {
         if (n == 0) {
             return 0;

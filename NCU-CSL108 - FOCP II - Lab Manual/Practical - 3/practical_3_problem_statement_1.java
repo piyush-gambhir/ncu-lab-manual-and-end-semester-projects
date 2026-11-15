@@ -1,15 +1,15 @@
-/*
-Write a Java program to find the maximum and minimum value of an array.
-Definition of Done:
-DoD 1:  The program should ask the user to enter the elements of the array.
-DoD 2: The program should display the maximum and minimum elements of the array.
-*/
+
+
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * practical_3_problem_statement_1
- */
+
+
+
 
 public class practical_3_problem_statement_1 {
 
@@ -20,7 +20,7 @@ public class practical_3_problem_statement_1 {
         System.out.print("\nEnter the Number of Elemnts You Wish to Enter: ");
         int n = sc.nextInt();
 
-        int[] arr = new int[n]; // Defining an Array of Size n
+        int[] arr = new int[n];
 
         for (int i = 0; i < n; i++) {
             System.out.print("Enter the Value of Element" + i + " of Array: ");

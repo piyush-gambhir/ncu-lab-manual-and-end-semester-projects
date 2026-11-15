@@ -1,15 +1,15 @@
-/*
-Write a Java program to solve quadratic equations (use if, else if and else).
-Definition of Done:
-DoD 1: The program asks the values of coefficients of a quadratic equation.
-DoD 2: The program should display the roots or an appropriate message.
-*/
+
+
+
+
+
+
 
 import java.util.Scanner;
 
-/**
- * practical_2_problem_statement_1
- */
+
+
+
 public class practical_2_problem_statement_1 {
 
     public static void main(String[] args) {

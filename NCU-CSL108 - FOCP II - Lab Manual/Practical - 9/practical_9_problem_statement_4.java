@@ -1,13 +1,13 @@
-/*
-Write a program that writes an Serial No.(int), First Name (String), CGPA (float) and Grade(char) into a text file using bufferedWriter and displays the contents using bufferedReader.
-*/
+
+
+
 
 import java.io.*;
 import java.util.Scanner;
 
-/**
- * practical_9_problem_statement_4
- */
+
+
+
 public class practical_9_problem_statement_4 {
 
     public static void writeFile(String fileName) {

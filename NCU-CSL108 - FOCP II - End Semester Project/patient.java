@@ -1,29 +1,29 @@
-// Defining Package
+
 package BloodBank;
 
-// importing the required built-in librarires
+
 import java.util.*;
 import java.io.*;
 import java.io.FileWriter;
 import java.util.Collections;
 
-// Patient Class
+
 public class patient {
 
-    private String name; // patient age
-    private int age; // patient age
-    private String disease; // patient disease
-    private String doctorName; // patient doctor's name
-    private String dateAdmitted = "YYYY-MM-DD"; // patient admitted date
-    private String bloodGroupRequired; // required blood group by the patient
+    private String name;
+    private int age;
+    private String disease;
+    private String doctorName;
+    private String dateAdmitted = "YYYY-MM-DD";
+    private String bloodGroupRequired;
 
-    // Empty constructor for patient class.
+
     public patient() {
 
     }
 
-    // Parameterized constructor for patient class.
-    // This construct is used for creating patient record.
+
+
     public patient(String Name, int Age, String Disease, String DoctorName, String DateAdmitted,
             String BloodGroupRequired) {
 
@@ -36,80 +36,80 @@ public class patient {
 
     }
 
-    // Method setName()
-    // This method is used to set patient name.
+
+
     public void setName(String Name) {
         this.name = Name;
     }
 
-    // Method setAge()
-    // This method is used to set patient age.
+
+
     public void setAge(int Age) {
         this.age = Age;
     }
 
-    // Method setDisease()
-    // This method is used to set patient disease.
+
+
     public void setDisease(String Disease) {
         this.disease = Disease;
     }
 
-    // Method setDoctorName()
-    // This method is used to set patient doctor name.
+
+
     public void setDoctorName(String DoctorName) {
         this.doctorName = DoctorName;
     }
 
-    // Method setDateAdmitted()
-    // This method is used to set patient date admitted.
+
+
     public void setDateAdmitted(String DateAdmitted) {
         this.dateAdmitted = DateAdmitted;
     }
 
-    // Method setBloodGroup Required()
-    // This method is used to set patient blood group.
+
+
     public void setBloodGroupRequired(String BloodGroupRequired) {
         this.bloodGroupRequired = BloodGroupRequired;
     }
 
-    // Method getName()
-    // This method is used to fetch patient name.
+
+
     public String getName() {
         return this.name;
     }
 
-    // Method getAge()
-    // This method is used to fetch patient age.
+
+
     public int getAge() {
         return this.age;
     }
 
-    // Method getDisease()
-    // This method is used to fetch patient disease.
+
+
     public String getDisease() {
         return this.disease;
     }
 
-    // Method getDoctorName()
-    // This method is used to fetch patient doctor name.
+
+
     public String getDoctorName() {
         return this.doctorName;
     }
 
-    // Method getDateAdmitted()
-    // This method is used to fetch patient date admitted.
+
+
     public String getDateAdmitted() {
         return this.dateAdmitted;
     }
 
-    // Method getBloodGroup()
-    // This method is used to fetch patient blood group.
+
+
     public String getBloodGroupRequired() {
         return this.bloodGroupRequired;
     }
 
-    // Method display()
-    // This method displays patient record in structured view.
+
+
     public void display() {
         System.out.println("""
                 -------------------
@@ -125,16 +125,16 @@ public class patient {
         System.out.println("Blood Group Required        :      " + this.bloodGroupRequired);
     }
 
-    // Method addPatientRecord()
-    // This method takes patient details such as name, age, disesase, doctor
-    // name,date admitted, blood group as input and create a record for donor.
+
+
+
     public void addPatientRecord() {
         Scanner sc = new Scanner(System.in);
 
         Boolean moreRecord = true;
 
-        // A infinite while loop to take patient record as input from the user until
-        // user wants to.
+
+
         while (moreRecord == true) {
             try {
                 System.out.println(
@@ -208,9 +208,9 @@ public class patient {
         }
     }
 
-    // Method addPatientRecordToFile
-    // This method appends the patient record to the file "patient_record.txt" text
-    // file.
+
+
+
     public void addPatientRecordToFile() throws IOException {
 
         String outputText = this.getName() + "|" + this.getAge() + "|" + this.getDisease() + "|"
@@ -234,9 +234,9 @@ public class patient {
         }
     }
 
-    // Method getRecordFromFile()
-    // This method fetch the patient records from the file "patient_records.txt" and
-    // add them to an ArrayList patient_records
+
+
+
     public ArrayList<patient> getPatientRecordFromFile() throws FileNotFoundException {
         File patientRecords = new File("patientRecords.txt");
         Scanner sc = new Scanner(patientRecords);
@@ -253,9 +253,9 @@ public class patient {
         return patientList;
     }
 
-    // Method searchPatientWithName()
-    // This method takes name as input and then search for patient record with the
-    // enetered name and then displays the record if found.
+
+
+
     public void searchPatientWithName() {
         Scanner sc = new Scanner(System.in);
 
@@ -308,9 +308,9 @@ public class patient {
         }
     }
 
-    // Method getpatientListAscendingOrder()
-    // This method sort the records in asscending order and the display all the
-    // records.
+
+
+
     public void getpatientListAscendingOrder() {
         Scanner sc = new Scanner(System.in);
 
@@ -361,8 +361,8 @@ public class patient {
         }
     }
 
-    // Method getSuitableDonors()
-    // This method displays a list of suitable donors for the entered patient.
+
+
     public void getSuitableDonors() {
         Scanner sc = new Scanner(System.in);
 
@@ -439,8 +439,8 @@ public class patient {
         }
     }
 
-    // Method getPatientsRequireEnteredBloodGroup()
-    // This method displays a list of patients that require the enetred blood group.
+
+
     public void getPatientsRequireEnteredBloodGroup() {
         Scanner sc = new Scanner(System.in);
 
